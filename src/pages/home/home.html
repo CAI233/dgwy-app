@@ -1,0 +1,126 @@
+<ion-header color="transparent" id="home_title">
+    <ion-navbar color="transparent">
+        <div class="my-set-navbar">
+            <div class="plan-nav-1">
+                <button ion-button icon-only style="float:left" (tap)="openMenu();">
+                    <ion-icon id="icon" class="iconfont icon-gerenzhongxin" style="padding:0 8px; font-size:1.6em"></ion-icon>
+                </button>
+                <button ion-button icon-only style="float:right" id="message" [ngClass]="{'active':service.pushNum!=0}" (tap)="toTuiSongXiaoXi()">
+                    <ion-icon class="iconfont icon-xiaoxi " style="padding: 0 8px; font-size:1.6em"></ion-icon>
+                </button>
+                <h1>东光物业</h1>
+            </div>
+            <div class="plan-nav-2" style="opacity:0;">
+                <button ion-button icon-only style="float:left" (tap)="openMenu();">
+                    <ion-icon id="icon" class="iconfont icon-gerenzhongxin" style="padding:0 8px; font-size:1.6em"></ion-icon>
+                </button>
+                <button ion-button icon-only style="float:right" id="message" [ngClass]="{'active':service.pushNum!=0}" (tap)="toTuiSongXiaoXi()">
+                    <ion-icon class="iconfont icon-xiaoxi " style="padding: 0 8px; font-size:1.6em"></ion-icon>
+                </button>
+                <h1>东光物业</h1>
+            </div>
+        </div>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="page-content-all">
+        <div id="wrapper" class="my-wrapper">
+            <div id="scroller" class="my-scroller">
+                <ion-slides #Slides loop="true" autoplay="3000" *ngIf="adv.length>=1" pager class="adv">
+                    <ion-slide *ngFor="let d of adv">
+                        <img src="{{service.ctxPath+d.adv_img_small}}" onload="imgLoad(this)">
+                    </ion-slide>
+                </ion-slides>
+                <div class="pd-col-content cm-nav-bar">
+                    <div class="cm-nv-item" (tap)="toDongGuangFengCai()">
+                        <img src="assets/imgs/icon-list_01.jpg" onload="imgLoad(this)">
+                        <p>东光风采</p>
+                    </div>
+                    <div class="cm-nv-item" (tap)="toZaiXianBaoXiu()">
+                        <img src="assets/imgs/icon-list_02.jpg" onload="imgLoad(this)">
+                        <p>在线报修</p>
+                    </div>
+                    <div class="cm-nv-item" (tap)="toYiJianDiaoCha()">
+                        <img src="assets/imgs/icon-list_03.jpg" onload="imgLoad(this)">
+                        <p>意见调查</p>
+                    </div>
+                    <div class="cm-nv-item" (tap)="toNianKaChaXun()">
+                        <img src="assets/imgs/icon-list_04.jpg" onload="imgLoad(this)">
+                        <p>年卡查询</p>
+                    </div>
+                    <div class="cm-nv-item" (tap)="toYuanQuHuoDong()">
+                        <img src="assets/imgs/icon-list_05.jpg" onload="imgLoad(this)">
+                        <p>园区活动</p>
+                    </div>
+                    <div class="cm-nv-item" (tap)="toZhouBianTuiJian()">
+                        <img src="assets/imgs/icon-list_06.jpg" onload="imgLoad(this)">
+                        <p>周边推荐</p>
+                    </div>
+                    <div class="cm-nv-item" (tap)="toTouSuJianYi()">
+                        <img src="assets/imgs/icon-list_07.jpg" onload="imgLoad(this)">
+                        <p>投诉建议</p>
+                    </div>
+                    <div class="cm-nv-item" (tap)="toShengHuoFuWu()">
+                        <img src="assets/imgs/icon-list_08.jpg" onload="imgLoad(this)">
+                        <p>生活服务</p>
+                    </div>
+                </div>
+
+                <div class="top-stories">
+                    <div class="top-stories-icon"></div>
+                    <div class="top-stories-tab">
+                        <span>热门</span>
+                    </div>
+                    <div class="top-stories-cont">
+                        <p *ngFor="let d of news" (tap)="toTongZhiGongGaoDetail(d.id)">{{d.title}}</p>
+                    </div>
+                </div>
+                <!-- 党建动态 -->
+                <div class="box border-bottom">
+                    <div class="more-title">
+                        <span class="title">党建动态</span>
+                        <span class="more" (tap)="toDangJianDongTai()">
+                            <span>更多</span>
+                            <i class="icon iconfont icon-gengduo"></i>
+                        </span>
+                    </div>
+                    <div class="box-content">
+                        <ion-slides>
+                            <ion-slide *ngFor="let d of party" (tap)="toDangJianDongTaiDetail(d.id)">
+                                <span>{{d.title}}</span>
+                                <img src="{{service.ctxPath+d.cover_small}}" onload="imgLoad(this)">
+                            </ion-slide>
+
+                        </ion-slides>
+                    </div>
+                </div>
+                <!-- 通知公告 -->
+                <div class="box border-bottom">
+                    <div class="more-title">
+                        <span class="title">通知公告</span>
+                        <span class="more" (tap)="toTongZhiGongGao()">
+                            <span>更多</span>
+                            <i class="icon iconfont icon-gengduo"></i>
+                        </span>
+                    </div>
+                    <div class="box-content">
+                        <div class="box-row" *ngFor="let d of news" (tap)="toTongZhiGongGaoDetail(d.id)">
+                            <div class="box-row-icon">
+                                <img src="{{service.ctxPath+d.cover_small}}" onload="imgLoad(this)">
+                            </div>
+                            <div class="box-row-content">
+                                <div class="box-row-title">
+                                    {{d.title}}
+                                </div>
+                                <div class="box-row-time">{{d.create_time}}</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

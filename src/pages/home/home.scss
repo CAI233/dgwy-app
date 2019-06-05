@@ -1,0 +1,311 @@
+page-home {
+  background: url(../assets/imgs/top_01.png) no-repeat center 0 / 100% auto #fff;
+  ion-content {
+    background: transparent !important;
+      .scroll-content {
+        margin-top: 0 !important;
+      }
+      .fixed-content{
+        margin-top: 0 !important;
+      }
+  }
+  .swiper-slide img{
+    width: 100%;
+    height: 100%;
+  }
+  .slide-zoom{
+    height: 100%;
+  }
+  .toolbar{
+    padding: 0;
+  }
+  #scroller{
+    background: #fff !important;
+  }
+  .back-button.show-back-button{
+    display: none;
+  }
+    ion-slides.adv{
+      height: 30vh;
+    }
+    .pd-col-content {
+      float: left;
+      width: 100%
+    }
+    .cm-nav-bar {
+      border-bottom: 10px #f5f8fa solid;
+      padding-bottom: 1rem;
+      padding: 1.5rem .5rem 0 .5rem;
+    }
+    .cm-nav-bar .cm-nv-item {
+      float: left;
+      width: 25%;
+      text-align: center;
+      padding: 0 .5rem;
+    }
+    .cm-nv-item p{
+      margin-top:.5rem;
+    }
+    .cm-nv-item img{
+      width: 15vw;
+    }
+
+    .top-left-org{
+      position: absolute;
+      top: 3rem;
+      left: 1rem;
+      z-index: 11;
+      width: auto;
+      height: 3rem;
+      line-height: 3rem;
+      background: rgba(255, 255, 255, .5);
+      border-radius: 15rem;
+      padding: 0 1.5rem 0 .5rem;
+      display: flex;
+      align-items: center;
+    }
+    .top-left-org .icon{
+      font-size: 3rem;
+      color: #585858;
+      margin-right: .5rem
+    }
+    .top-right-message{
+      position: absolute;
+      top: 3rem;
+      right: 1rem;
+      z-index: 11;
+      background: rgba(255, 255, 255, .5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+    }
+    .top-right-message .icon{
+      font-size: 3rem;
+      color: #585858;
+    }
+    .top-right-message.active::before{
+      content: '';
+      position: absolute;
+      top: -.2rem;
+      right: -.2rem;
+      width: 1rem;
+      height: 1rem;
+      background: red;
+      border-radius: 50%;
+    }
+    #message.active::before{
+      content: '';
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      width: .75rem;
+      height: .75rem;
+      background: red;
+      border-radius: 50%;
+    }
+    .top-stories{
+      border-bottom: .8rem #f5f8fa solid;
+      height: 4.5rem;
+      line-height: 3.7rem;
+      display: flex;
+      width: 100%;
+    }
+    .top-stories-icon{
+      background: url(../assets/imgs/toutiao.png) no-repeat top center;
+      height: 3.7rem;
+      width: 20vw;
+      background-size: 3.7rem;
+      background-position-y: 1rem;
+      position: relative;
+    }
+    .top-stories-icon::before{
+      content: '';
+      position: absolute;
+      right: 1vw;
+      top: .5rem;
+      bottom: .5rem;
+      background: #ababab;
+      width: 1px;
+    }
+    .top-stories-tab{
+     width: 15vw;
+     text-align: center
+    }
+    .top-stories-tab span{
+      border: 1px solid #e07a10;
+      color: #e07a10;
+      border-radius: 3px;
+      padding: .2rem .5rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .top-stories-cont{
+      width: 65vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      position: relative;
+      margin: 1rem 0;
+
+    }
+    @keyframes anim1{
+      0% {top:1.5rem;opacity: 1}
+      16.5% {top: 0;opacity: 1}
+      33% {top: -1.5rem;opacity: 1}
+      66% {top: -1.5rem;opacity: 0}
+      100%{top:1.5rem;opacity: 0}
+    }
+    @keyframes anim2{
+      0% {top:1.5rem;opacity: 0}
+      33% {top: 1.5rem;opacity: 1}
+      45.5% {top: 0;opacity: 1}
+      66% {top: -1.5rem;opacity: 1}
+      100%{top:-1.5rem;opacity: 0}
+    }
+    @keyframes anim3{
+      0% {top:1.5rem;opacity: 0}
+      33% {top: 1.5rem;opacity: 0}
+      66% {top: 1.5rem;opacity: 1}
+      78.5% {top: 0;opacity: 1}
+      100%{top:-1.5rem;opacity: 1}
+    }
+    .top-stories-cont p{
+      margin: 0;
+      position: absolute;
+      height: 100%;
+      line-height: 1.7rem;
+    }
+    .top-stories-cont p:nth-child(1){
+      animation: anim1 10s linear infinite;
+    }
+    .top-stories-cont p:nth-child(2){
+      animation: anim2 10s linear infinite;
+    }
+    .top-stories-cont p:nth-child(3){
+      animation: anim3 10s linear infinite;
+    }
+
+    .more-title{
+      height: 3rem;
+      line-height: 3rem;
+      padding: 0 1rem;
+    }
+    .more-title .title{
+      border-left: .5rem solid red;
+      padding-left: .5rem;
+    }
+    .more-title .more{
+      float: right;
+      display: flex
+    }
+
+   
+    .border-bottom {
+      border-bottom: 10px #f5f8fa solid;
+    }
+    .box-content .slide-zoom span{
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: .25rem;
+    }
+    .box-content ion-slide{
+      padding: 0 30px;
+    }
+    .box-content ion-slide img{
+      transition: .3s all ease-out;
+      height: 25vh;
+      width: 100%;
+    }
+    .box-content ion-slide.swiper-slide.swiper-slide-next img{
+        transform: scale(1,.9);
+        margin-left: -7.5rem;
+    }
+    .box-content ion-slide.swiper-slide.swiper-slide-prev img{
+        transform: scale(1,.9);
+        margin-left: 3.75rem;
+    }
+
+    //透明头
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-md-transparent .toolbar-background-md{
+      background: transparent;
+      border-color: transparent;
+    }
+    .toolbar-md-transparent .toolbar-title-md, .toolbar-ios-transparent .toolbar-title-ios{
+      color: #ffffff;
+    }
+    .bar-button-default-ios, .bar-button-default-md{
+      color: #ffffff;
+    }
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-ios-transparent .toolbar-background-ios{
+      border-color: transparent !important;
+    }
+    .transparent::after{
+      border-color: transparent !important;
+    }
+    .header-md-transparent::after{
+      background-image: none !important;
+    }
+    .toolbar-ios-transparent .button-ios, .toolbar-md-transparent .button-md{
+      height:36px;
+      margin: 0;
+      background: transparent;
+      color: #fff;
+      box-shadow: none;
+  }
+    //自定义头
+    .my-set-navbar{
+      width: 100%;
+      height:44px;
+      position: relative;
+    }
+    .header-md-transparent .my-set-navbar{
+      height: 56px;
+    }
+    .plan-nav-1{
+      float:left;
+      width: 100%;
+      padding: 4px;
+      height: 44px;
+      position: relative;
+      text-align: center;
+    }
+    .plan-nav-2{
+      position: absolute;
+      width: 100%;
+      padding: 4px;
+      height: 44px;
+      text-align: center;
+      top: 0;
+      left: 0;
+      z-index: 9;
+  }
+    .my-set-navbar h1{
+      line-height: 36px;
+      display: inline-block;
+      text-align: center;
+      font-size: 1.6rem;
+      color: #fff;
+      pointer-events: auto;
+      margin: 0;
+    }
+    .my-set-navbar .plan-nav-2 *{
+      color: #000 !important;
+    }  
+    .page-content-all{
+      float: left;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .header-md-transparent .plan-nav-1, 
+    .header-md-transparent .plan-nav-2{
+      padding: 10px 4px;
+      height: 56px;
+    }
+
+  }
+  

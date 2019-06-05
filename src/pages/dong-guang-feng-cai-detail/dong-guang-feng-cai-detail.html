@@ -1,0 +1,18 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            东光风采
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="detail" *ngIf="detail.title">
+        <h4 class="detail-title" style="text-align: center">{{detail.title}}</h4>
+        <p style="text-align: center">
+            {{detail.create_time}}
+        </p>
+        <div class="detail-content">
+            <div class="detail-text" [innerHtml]="detail.content"></div>
+        </div>
+    </div>
+</ion-content>

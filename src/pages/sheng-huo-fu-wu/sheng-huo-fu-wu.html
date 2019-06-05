@@ -1,0 +1,64 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            生活服务
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (tap)="toShengHuoFuWuAdd()">
+                <i class="icon iconfont icon-jia" style="font-size: 2rem;color: #6b6a6a;"></i>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="正在刷新">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div class="box" style="padding-top: 1rem;" *ngIf="data && data.length>0">
+        <div class="box-content">
+            <div *ngFor="let d of data">
+                <div class="box-row" (tap)="toShengHuoFuWuDetail(d.id)">
+                    <div class="box-row-icon">
+                        <img src="{{service.ctxPath+d.icon}}" onerror="this.src='assets/imgs/img404.png'">
+                    </div>
+                    <div class="box-row-content">
+                        <div class="box-row-text">
+                            <span style="font-weight: 500;font-size: 1.4rem;">{{d.member_name}}</span>
+                            <span style="float:right;">{{d.create_time}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-row-after">
+                    <div (tap)="toShengHuoFuWuDetail(d.id)">
+                        <p>{{d.content}}</p>
+                        <div class="img-list" *ngIf="d.img_path">
+                            <img src="{{service.ctxPath+img}}" *ngFor="let img of d.img_path.split(',')">
+                        </div>
+                        <div *ngIf="!d.img_path" style="height: 2rem;width: 100%;"></div>
+                    </div>
+                    <div class="box-row-after-bottom">
+                        <label (tap)="toShengHuoFuWuDetail(d.id)">
+                            <i class="icon iconfont icon-xiaoxi"></i>
+                            <span>{{d.commentnum}}</span>
+                        </label>
+                        <label (click)="likeClick(d.id);" [ngStyle]="{'color':d.count==1?'red':''}">
+                            <i class="icon iconfont icon-iconfontzhizuobiaozhun023148"></i>
+                            <span>{{d.likednum}}</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box" *ngIf="!data || data.length==0">
+        <img src="assets/imgs/not-content.png" style="width: 50vw;margin: 20vh 25vw">
+    </div>
+    <!--下滑的时候，加载数据-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载数据..." *ngIf="scrollShow">
+        </ion-infinite-scroll-content>
+        <ion-infinite-scroll-content loadingSpinner="false" loadingText="已经到底了" *ngIf="!scrollShow">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

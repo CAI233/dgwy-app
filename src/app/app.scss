@@ -1,0 +1,263 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+textarea,input,select{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    appearance: none
+}
+.box{
+    padding-bottom: 1rem;
+}
+.box-row{
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    position: relative;
+    min-height: 4.6rem;
+  }
+  .box-row:not(:last-child){
+      padding-bottom:2rem;
+  }
+  .box-row:not(:last-child)::before{
+      content: '';
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      height: 1px;
+      background: #ececec
+  }
+  .box-row-icon{
+      width: 30vw;
+    }
+  .box-row-icon img{
+        vertical-align: bottom;
+    }
+  .box-row-content{
+    width: 70vw;
+    padding-left:.5rem; 
+    align-self: flex-start;
+  }
+  .box-row-title{
+      text-align: justify;
+      overflow: hidden;//超出隐藏
+      text-overflow: ellipsis;//超出文本设置为...
+      display:-webkit-box;//将div1转换为盒子模型
+      -webkit-line-clamp: 2;//设置div1的文本为2行
+      -webkit-box-orient: vertical;//从顶部向底部垂直布置子元素
+      font-size: 1.4rem;
+    }
+    .box-row-type-title{
+       font-weight: bold;
+       overflow: hidden;
+       text-overflow: ellipsis;
+       white-space: nowrap;
+       margin-right: 4rem;
+       font-size: 1.5rem;
+    }
+    .box-row-type-title .box-row-type{
+        position: absolute;
+        right: 1rem;
+    }
+    .box-row-type-title .box-row-type.c1{
+        color: #619cde;
+    }
+    .box-row-type-title .box-row-type.c2{
+        color: #f97e1c;
+    }
+    .box-row-type-title .box-row-type.c3{
+        color: #28b929;
+    }
+    .box-row-text{
+        color: #525252;
+        font-size: 1.3rem;
+    }
+  .box-row-time{
+    position: absolute;
+    right: 1rem;
+    bottom: 2rem;
+    color: #525252;
+    font-size: 1.3rem;
+  }
+  .box-content .box-row:last-child .box-row-time{
+      bottom: 0;
+  }
+  .tab-title{
+    display: flex;
+    height: 3.5rem;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+  }
+  .tab-title span{
+      width: 50vw;
+      text-align: center;
+      font-size: 1.5rem;
+      height: 3.5rem;
+      line-height: 3.5rem;
+      position: relative
+    }
+    .tab-title span.active{
+        color: red;
+    }
+    .tab-title span.active::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background:red;
+    }
+    .tab-content{
+        padding: 1rem 0;
+    }
+    .tab-content .box{
+        border-bottom: 1px solid #ececec;
+    }
+    .ion-md-iconfont-icon-rt,.ion-ios-iconfont-icon-rt{
+        font-family:"iconfont" !important;
+        font-size:2.2rem;
+        font-style:normal;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .ion-md-iconfont-icon-rt:before,.ion-ios-iconfont-icon-rt:before { content: "\e75e";color: #6b6a6a; font-size: 2rem;}
+    ion-title .toolbar-title{
+        font-weight: normal;
+        font-size: 1.6rem;
+    }
+
+    .toolbar-ios-light .toolbar-background-ios{
+        background: #fff
+    }
+
+    .loading-ios .loading-wrapper, .loading-md .loading-wrapper{
+        background: transparent;
+        box-shadow: none;
+    }
+    .loading-ios .loading-wrapper *, .loading-md .loading-wrapper *{
+        stroke: #fff !important;
+    }
+ 
+    .detail-text img{
+        float: left;
+        margin: .5rem 0;
+        height: auto;
+    }
+
+    .my-wrapper {  
+        position: absolute;  
+        z-index: 1;  
+        top: 0;  
+        bottom: 0;  
+        left: 0;  
+        width: 100%;  
+        background: transparent;  
+        overflow: hidden;  
+    }  
+    .my-scroller {  
+        position: absolute;  
+        z-index: 1;  
+        -webkit-tap-highlight-color: rgba(0,0,0,0);  
+        width: 100%;  
+        -webkit-transform: translateZ(0);  
+        -moz-transform: translateZ(0);  
+        -ms-transform: translateZ(0);  
+        -o-transform: translateZ(0);  
+        transform: translateZ(0);  
+        -webkit-touch-callout: none;  
+        -webkit-user-select: none;  
+        -moz-user-select: none;  
+        -ms-user-select: none;  
+        user-select: none;  
+        -webkit-text-size-adjust: none;  
+        -moz-text-size-adjust: none;  
+        -ms-text-size-adjust: none;  
+        -o-text-size-adjust: none;  
+        text-size-adjust: none;  
+    }  
+
+    ion-menu ion-label{
+        font-size: 1.6rem;
+    }
+    ion-menu ion-icon{
+        font-size: 2rem !important;
+        vertical-align: bottom;
+        margin: 0 1rem 0 .5rem;
+    }
+    .menu-header{
+        padding: 2rem 1rem;
+        border-bottom:1px solid #c8c7cc  ;
+    }
+    .menu-header-member{
+        display: flex;
+        align-items: center;
+    }
+    .menu-header-icon{
+        width: 15vw;
+        height: 15vw;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .menu-header-icon img{
+        height: 100%;
+        width: 100%;
+        vertical-align: top;
+    }
+    .menu-header-text{
+        width: 70%;
+        padding-left: 1rem;
+        font-size: 2rem;
+        color: #2d2c2c;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .swiper-pagination-bullet-active{
+        background: #fff;
+      }
+    .refresher-refreshing .spinner-bubbles circle, .refresher-refreshing .spinner-circles circle, .refresher-refreshing .spinner-dots circle{
+        color: #69717d;
+    }
+    .refresher-pulling-text, .refresher-refreshing-text{
+        color: #313131;
+    }
+    .has-refresher > .scroll-content{
+        border: none;
+    }
+    #imgBig{
+        background: #000;
+        position: fixed;
+        z-index: 1111;
+        bottom: 0;
+        top: 0;
+      }
+      #imgBig .swiper-pagination{
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        position: fixed;
+      }
+      #imgBig .swiper-pagination-bullet-active{
+            opacity:1 !important
+      }
+      #imgBig .swiper-pagination-bullet{
+        background: #fff;
+          opacity: .3
+      }

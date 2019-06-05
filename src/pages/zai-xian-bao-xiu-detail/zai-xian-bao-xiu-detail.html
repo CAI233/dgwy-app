@@ -1,0 +1,36 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            在线报修
+        </ion-title>
+        <ion-buttons end *ngIf="detail.member_id==service.LoginUserInfo.member_id">
+            <button ion-button (tap)="delRepair()" style="font-size: 1.4rem;color: red;">
+                撤回
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="detail" *ngIf="detail">
+        <h4 class="detail-title">{{detail.repair_title}}</h4>
+        <div class="detail-row">
+            <div class="detail-time">{{detail.create_time}}</div>
+            <div class="detail-type" [ngClass]="{'c1':detail.status==1,'c2':detail.status==2,'c3':detail.status==3}" [innerHtml]="['已提交','处理中','已完成'][detail.status-1]"></div>
+        </div>
+        <div class="detail-content">
+            <div class="detail-text" [innerHtml]="detail.remark"></div>
+        </div>
+        <div class="img-list" *ngIf="detail.img_path">
+            <img src="{{service.ctxPath+img}}" *ngFor="let img of detail.img_path.split(',')" (click)="imgBig(this)">
+        </div>
+        <div *ngIf="!detail.img_path" style="height: 2rem;width: 100%;">
+        </div>
+    </div>
+</ion-content>
+<div id="imgBig" style="display: none">
+    <ion-slides pager *ngIf="imgBigs && imgBigs.length>0">
+        <ion-slide *ngFor="let img of imgBigs">
+            <img src="{{service.ctxPath+img}}" onload="imgLoad(this)">
+        </ion-slide>
+    </ion-slides>
+</div>

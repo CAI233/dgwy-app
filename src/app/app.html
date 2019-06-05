@@ -1,0 +1,74 @@
+<ion-menu [content]="mycontent">
+    <ion-content>
+        <div class="menu-header" *ngIf="service.LoginUserInfo">
+            <div class="menu-header-member" >
+                <div class="menu-header-icon">
+                    <img src="{{service.ctxPath+service.LoginUserInfo.icon}}" onerror="this.src='assets/imgs/img404.png'">
+                </div>
+                <div class="menu-header-text" [innerHtml]="service.LoginUserInfo.member_name?service.LoginUserInfo.member_name:service.LoginUserInfo.phone">
+                    
+                </div>
+            </div>
+        </div>
+        <ion-item *ngIf="service.LoginUserInfo">
+            <ion-label>物业选择</ion-label>
+            <ion-select [(ngModel)]="service.LoginUserInfo.org_id" okText="确定" cancelText="取消" style="width: 100%;max-width: 100%">
+                <ion-option *ngFor="let o of service.orgList;let i=index" value="{{o.org_id}}">{{o.org_name}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-list>
+            <ion-item (tap)="toTuiSongXiaoXi()">
+                <ion-icon class="iconfont icon-xiaoxi1"></ion-icon>
+                我的消息
+            </ion-item>
+            <ion-item (tap)="toMyShengHuoFuWu()">
+                <ion-icon class="iconfont icon-fabu"></ion-icon>
+                我的发布
+            </ion-item>
+            <ion-item (tap)="toZaiXianBaoXiu()">
+                <ion-icon class="iconfont icon-baoxiu"></ion-icon>
+                我的报修
+            </ion-item>
+            <ion-item (tap)="toTouSuJianYi()">
+                <ion-icon class="iconfont icon-jianyi"></ion-icon>
+                我的建议
+            </ion-item>
+            <ion-item (tap)="toYiJianDiaoCha()">
+                <ion-icon class="iconfont icon-navicon-yjjy"></ion-icon>
+                意见调查
+            </ion-item>
+        </ion-list>
+        <!-- <ion-list>
+            <ion-item>
+              <div>{{registrationId}}</div>
+              <button ion-button full (click)="getRegistrationID()">Get Registration Id</button>
+            </ion-item>
+        
+            <ion-item>
+              <button ion-button full (click)="setTags()">Set tags - Tag1, Tag2</button>
+              <button ion-button full (click)="addTags()">Add tags - Tag3, Tag4</button>
+              <button ion-button full (click)="checkTagBindState()">Check tag bind state - Tag1</button>
+              <button ion-button full (click)="deleteTags()">Delete tags - Tag4</button>
+              <button ion-button full (click)="getAllTags()">Get all tags</button>
+              <button ion-button full (click)="cleanTags()">Clean tags</button>
+            </ion-item>
+        
+            <ion-item>
+              <button ion-button full (click)="setAlias()">Set Alias - TestAlias</button>
+              <button ion-button full (click)="getAlias()">Get Alias</button>
+              <button ion-button full (click)="deleteAlias()">Delete Alias</button>
+            </ion-item>
+        
+            <ion-item>
+              <button ion-button full (click)="addLocalNotification()">Trigger local notification after 5 seconds</button>
+            </ion-item>
+          </ion-list> -->
+        <div style="margin-bottom: 1rem;text-align: center;">
+            当前版本:v1.0
+        </div>
+        <div style="padding: 0 2rem;">
+            <button ion-button block (tap)="loginOut()">退出登录</button>
+        </div>
+    </ion-content>
+</ion-menu>
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

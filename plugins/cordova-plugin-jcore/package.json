@@ -1,0 +1,57 @@
+{
+  "_from": "cordova-plugin-jcore",
+  "_id": "cordova-plugin-jcore@1.2.1",
+  "_inBundle": false,
+  "_integrity": "sha1-F0qz8o72HVZ35YQW7TjNlY6UYLw=",
+  "_location": "/cordova-plugin-jcore",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-jcore",
+    "name": "cordova-plugin-jcore",
+    "escapedName": "cordova-plugin-jcore",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/cordova-plugin-jcore/download/cordova-plugin-jcore-1.2.1.tgz",
+  "_shasum": "174ab3f28ef61d5677e58416ed38cd958e9460bc",
+  "_spec": "cordova-plugin-jcore",
+  "_where": "/Users/admin/Desktop/product/dgwy-app/myApp",
+  "author": {
+    "name": "wilhantian, jiguang, josh_lipan"
+  },
+  "bugs": {
+    "url": "https://github.com/jpush/cordova-plugin-jcore/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-jcore",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "jcore for cordova plugin",
+  "homepage": "https://github.com/jpush/cordova-plugin-jcore#readme",
+  "keywords": [
+    "jcore",
+    "jpush",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT License",
+  "name": "cordova-plugin-jcore",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpush/cordova-plugin-jcore.git"
+  },
+  "version": "1.2.1"
+}

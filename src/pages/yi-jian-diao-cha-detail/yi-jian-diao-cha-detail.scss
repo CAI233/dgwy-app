@@ -1,0 +1,112 @@
+page-yjdcd {
+  .detail p{
+    font-weight: 500;
+    color: #545454;
+    font-size: 1.3rem;
+    margin: 0;
+    display: inline-block;
+  }
+  .detail-title{}
+  .detail-row{    
+    display: flex;
+    width: 90vw;
+    height: 2rem;
+    line-height: 2rem;
+  }
+  .detail-time{
+    width: 47vw;
+  }
+  .detail-type{    
+    width: 47vw;
+    text-align: right;
+    font-weight: 500;
+  }
+  .detail-type.c1{
+    color: #619cde;
+  }
+  .detail-type.c2{
+      color: #f97e1c;
+  }
+  .detail-type.c3{
+      color: #28b929;
+  }
+  .detail-content{
+    margin-top: 1rem;
+  }
+  .detail-text{
+    text-align: justify;
+    text-indent: 2em;
+    margin-bottom: 1rem;
+  }
+  .comment .box-row:before{
+    content: none;
+  }
+  .comment  .box-row-after p{
+    margin-bottom: 1rem;
+  }
+  .comment .box-row-text{
+    height: 12vw;
+    line-height: 12vw;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  .comment .box-row-after{
+    padding: 0 6vw;
+    border-width: 1px;
+    text-indent: initial;
+  }
+  .comment .box-row:not(:last-child){
+    padding-bottom: 1rem;
+  }
+  .write-commtent{
+    display: flex;
+  }
+  .write-commtent input{
+    height: 3rem;
+    border: 1px solid #ccc;
+    line-height: 3rem;
+    width: 65vw;
+    margin-left: 6vw;
+    border-radius: .5rem;
+    padding: 0 1rem;
+  }
+  .write-commtent span{
+    height: 3rem;
+    width: 20vw;
+    line-height: 3rem;
+    margin-right: 6vw;
+    text-align: center;
+    display: block;
+    background: #378fe4;
+    color: #fff;
+    border-radius: .5rem;
+    margin-left: 3vw;
+  }
+  .box-row{
+    padding: 0 6vw 0 6vw;
+  }
+  .box-row-icon{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .box-row-content{
+    width: 76vw;
+    padding-left: 1rem;
+  }
+  .box-row-icon img{
+    height: 100%;
+    width: 100%;
+  }
+  .detail-content{
+    border-bottom: 10px solid #f3f3f3;
+    margin-bottom: 1rem;
+  }
+  .box-row-after p{
+    margin: 0 0 .5rem 0;
+    text-indent: 2em;
+    text-align: justify
+  }
+}
+  

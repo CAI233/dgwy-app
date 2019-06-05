@@ -1,0 +1,48 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            意见调查
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="detail" *ngIf="detail.title">
+        <h4 class="detail-title" style="text-align: center">{{detail.title}}</h4>
+
+        <div class="detail-content">
+            <div class="detail-text" [innerHtml]="detail.content"></div>
+        </div>
+    </div>
+    <div class="comment">
+        <div *ngFor="let c of detail. wyOpinionReplyList">
+            <div class="box-row">
+                <div class="box-row-icon">
+                    <img src="{{service.ctxPath+c.user_icon}}" onerror="this.src='assets/imgs/img404.png'">
+                </div>
+                <div class="box-row-content">
+                    <div class="box-row-text">
+                        {{c.member_name}}
+                        <span style="float:right;">{{c.create_time}}
+                            <i class="icon iconfont icon-shanchu" style="font-size: 1.8rem;margin-left: 5px;color: #c34b0b;" *ngIf="service.LoginUserInfo.member_id==c.member_id"
+                                (click)="delComment(c.id)"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="box-row-after">
+                <p>{{c.content}}</p>
+            </div>
+        </div>
+        <div *ngIf="!detail. wyOpinionReplyList || detail. wyOpinionReplyList.length==0">
+            <img src="assets/imgs/not-review.png" style="width: 50vw;margin: 5vh 25vw">
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <div class="write-commtent">
+            <input type="text" [(ngModel)]="comment_content" placeholder="写评论">
+            <span (tap)="sendComment()">发送</span>
+        </div>
+    </ion-toolbar>
+</ion-footer>

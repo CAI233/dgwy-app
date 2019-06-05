@@ -1,0 +1,56 @@
+page-yqhd {
+  .box-row-content{
+    width: 100vw;
+    padding-left: 0;
+  }
+  .box-row-text{
+    font-weight: 500;
+  }
+  .box-row-time.end{
+    color: #ccc
+  }
+  .box-row-time.comments{
+    color: red
+  }
+  .box-row-text p{
+      margin: .5rem 0
+  }
+  .box-row:not(:last-child)::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+    height: 0.5rem;
+    background: #ececec;
+  }
+
+
+  .activity-end img{
+    vertical-align: top;
+  }
+  .activity-end{
+    position: relative;
+  }
+  .activity-end::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+  }
+  .activity-end::after{
+    content: '活动已结束';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-top: -.9rem;
+    margin-left: -3rem;
+
+  }
+}
+  

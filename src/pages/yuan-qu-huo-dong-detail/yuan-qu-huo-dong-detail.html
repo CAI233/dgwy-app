@@ -1,0 +1,21 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            园区活动
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="detail" *ngIf="detail.title">
+        <h4 class="detail-title" style="text-align: center">{{detail.title}}</h4>
+        <p>
+            活动时间：{{detail.start_time}} 至 {{detail.end_time}}
+        </p>
+        <p>
+            地&emsp;&emsp;址：{{detail.address}}
+        </p>
+        <div class="detail-content">
+            <div class="detail-text" [innerHtml]="detail.content"></div>
+        </div>
+    </div>
+</ion-content>

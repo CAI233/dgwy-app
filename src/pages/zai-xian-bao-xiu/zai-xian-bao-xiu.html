@@ -1,0 +1,76 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            在线报修
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (tap)="toZaiXianBaoXiuAdd()">
+                <i class="icon iconfont icon-jia" style="font-size: 2rem;color: #6b6a6a;"></i>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="正在刷新">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div class="tab-title">
+        <span [ngClass]="{'active':tabNum==1}" (click)="tabNum=1">代办工单</span>
+        <span [ngClass]="{'active':tabNum==2}" (click)="tabNum=2">全部工单</span>
+    </div>
+    <div class="tab-content">
+        <div class="box" *ngIf="tabNum==1">
+            <div class="box-content" *ngIf="daiban && daiban.length>0">
+                <div class="box-row" *ngFor="let d of daiban" (tap)="toZaiXianBaoXiuDetail(d.id)">
+                    <div class="box-row-icon">
+                        <img src="{{service.ctxPath+d.img_path.split(',')[0]}}">
+                    </div>
+                    <div class="box-row-content">
+                        <div class="box-row-type-title">
+                            {{d.repair_title}}
+                            <span class="box-row-type c3" [ngClass]="{'c1':d.status==1,'c2':d.status==2,'c3':d.status==3}" [innerHtml]="['已提交','处理中','已完成'][d.status-1]">已完成</span>
+                        </div>
+                        <div class="box-row-text">
+                            {{d.repair_type}}
+                        </div>
+                        <div class="box-row-time">{{d.create_time}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-content" *ngIf="!daiban || daiban.length==0">
+                <img src="assets/imgs/not-content.png" style="width: 50vw;margin: 20vh 25vw">
+            </div>
+        </div>
+        <div class="box" *ngIf="tabNum==2">
+            <div class="box-content" *ngIf="data && data.length>0">
+                <div class="box-row" *ngFor="let d of data" (tap)="toZaiXianBaoXiuDetail(d.id)">
+                    <div class="box-row-icon">
+                        <img src="{{service.ctxPath+d.img_path.split(',')[0]}}" (click)="imgBig(this,d)">
+                    </div>
+                    <div class="box-row-content">
+                        <div class="box-row-type-title">
+                            {{d.repair_title}}
+                            <span class="box-row-type" [ngClass]="{'c1':d.status==1,'c2':d.status==2,'c3':d.status==3}" [innerHtml]="['已提交','处理中','已完成'][d.status-1]"></span>
+                        </div>
+                        <div class="box-row-text">
+                            {{d.repair_type}}
+                        </div>
+                        <div class="box-row-time">{{d.create_time}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-content" *ngIf="!data || data.length==0">
+                <img src="assets/imgs/not-content.png" style="width: 50vw;margin: 20vh 25vw">
+            </div>
+        </div>
+    </div>
+    <!--下滑的时候，加载数据-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载数据..." *ngIf="scrollShow">
+        </ion-infinite-scroll-content>
+        <ion-infinite-scroll-content loadingSpinner="false" loadingText="已经到底了" *ngIf="!scrollShow">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+

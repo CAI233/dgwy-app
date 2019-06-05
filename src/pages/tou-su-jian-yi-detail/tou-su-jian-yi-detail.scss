@@ -1,0 +1,83 @@
+page-tsjyd {
+
+  .box-row{
+    padding: 0 6vw 0 6vw;
+  }
+  .box-row-icon{
+    width: 12vw;
+    height: 12vw;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .box-row-content{
+    width: 76vw;
+    padding-left: 1rem;
+  }
+  .box-row-icon img{
+    height: 100%;
+    width: 100%;
+    vertical-align: top
+  }
+  .box-row:not(:last-child){
+    padding-bottom: 1.5rem;
+  }
+  .box-row:not(:last-child)::before{
+    bottom:.5rem;
+  }
+  .box-row-after{
+    border-bottom: 10px solid #f3f3f3;
+    margin-bottom: 1rem;
+  }
+  .box-row-after p{
+    padding: 0 6vw;
+    margin: 0 0 .5rem 0;
+    text-indent: 2em;
+  }
+  .img-list{
+    padding: 3vw 6vw;
+  }
+  .img-list img{
+    height: 15vw;
+    width: 15vw;
+    margin: 0 .5rem;
+    border: 1px solid #ececec;
+  }
+  .box-row-after-bottom{
+    display: flex;
+    height: 3.5rem;
+    align-items: center;
+    color: #545353;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    margin-top: .5rem;
+  }
+  .box-row-after-bottom label:last-child::before{
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: .5rem;
+    bottom:.5rem;
+    width: 2px;
+    background:#ececec;
+  }
+  .box-row-after-bottom label{
+    width: 50%;
+    text-align: center;
+    position: relative;
+    height: 3.5rem;
+    line-height: 3.5rem;
+  }
+  .box-row-after-bottom label .icon + span{
+    vertical-align: top;
+  }
+  .box-row-after-bottom label .icon{
+    font-size: 2.5rem;
+  }
+
+  .box-row-text{
+    height: 12vw;
+    line-height: 12vw;
+    font-weight: 500;
+  }
+}
+  

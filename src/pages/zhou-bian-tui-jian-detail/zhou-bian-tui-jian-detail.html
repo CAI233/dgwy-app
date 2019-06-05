@@ -1,0 +1,25 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            周边推荐
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="detail" *ngIf="detail.title">
+        <h4 class="detail-title" style="text-align: center">{{detail.title}}</h4>
+        <p>
+            地&emsp;&emsp;址：{{detail.address}}
+        </p>
+        <p>
+            联&nbsp;&nbsp;系&nbsp;&nbsp;人：{{detail.contact_person}}
+        </p>
+        <p>
+            联系电话：{{detail.contact_tel}}
+        </p>
+
+        <div class="detail-content">
+            <div class="detail-text" [innerHtml]="detail.content"></div>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,31 @@
+page-tsxx {
+  
+    .box{
+      padding-top: 1rem;
+      border-width: 1px;
+      border-color: #ececec;
+      border-style: solid;
+    }
+    .box-row-content{
+      width: 100vw;
+    }
+    .box-row-time{
+      bottom: 2rem;
+      color: #525252;
+      font-size: 1.3rem;
+      text-align: right;
+      margin-top: 1rem;
+      position:initial
+    }
+    .box-row-title{
+      padding-right: 3rem;
+    }
+    .box-row-title b{
+      position: absolute;
+      right: 1rem;
+      top: 0;
+      width: 3rem;
+      text-align: right;
+    }
+  }
+  

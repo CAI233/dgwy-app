@@ -1,0 +1,52 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            在线报修
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="form">
+        <div class="form-row">
+            <label class="form-row-label">标题:</label>
+            <input class="form-input" [(ngModel)]="addParam.repair_title" placeholder="请输入标题 ">
+        </div>
+        <div class="form-row">
+            <label class="form-row-label">类型:</label>
+            <ion-item>
+                <ion-label>类型选择</ion-label>
+                <ion-select [(ngModel)]="addParam.repair_type_id" okText="确定" cancelText="取消" placeholder="请选择类型" style="width: 100%;max-width: 100%">
+                    <ion-option *ngFor="let t of typeList;let i=index" value="{{t.id}}">{{t.repair_type}}</ion-option>
+                </ion-select>
+            </ion-item>
+        </div>
+        <div class="form-row">
+            <label class="form-row-label">地址:</label>
+            <input class="form-input" [(ngModel)]="addParam.address" placeholder="请输入地址 ">
+        </div>
+        <div class="form-row">
+            <label class="form-row-label">联系电话:</label>
+            <input class="form-input" [(ngModel)]="addParam.phone" placeholder="请输入联系电话 ">
+        </div>
+        <div class="form-row">
+            <label class="form-row-label">描述:</label>
+            <textarea class="form-textarea" [(ngModel)]="addParam.remark" placeholder="请输入描述 "></textarea>
+        </div>
+        <div class="form-row">
+            <label class="form-row-label" style="width: 100%;float: left;">照片:</label>
+            <div class="files" *ngFor="let f of files;let i = index">
+                <div class="col">
+                    <img src="{{service.ctxPath+f}}">
+                    <i class="rm" (click)="removeFile(i)"></i>
+                </div>
+            </div>
+            <div class="addImg" (tap)="set_user_head()">
+
+            </div>
+            <p style="color:red;float: left;width: 100%;">(注:最多上传6张图)</p>
+        </div>
+        <div class="form-row">
+            <button ion-button block (tap)="formSubmit()">提交</button>
+        </div>
+    </div>
+</ion-content>

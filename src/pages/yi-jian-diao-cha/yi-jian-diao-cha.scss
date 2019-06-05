@@ -1,0 +1,35 @@
+page-yjdc {
+  .box-row-content{
+    width: 100vw;
+  }
+  .box-row-title{
+    font-weight: 500;
+    height: 3.2rem;
+    font-size: 1.5rem;
+  }
+  .box-row-text{
+    font-weight: 500;
+    height: 2.5rem;
+    line-height: 2.5rem;
+  }
+  .box-row:not(:last-child)::before{
+    left: 0;
+    right: 0;
+  }
+  .box-row-time{
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    width: 6rem;
+    text-align: center;
+  }
+  .box-row-time.end{
+    color: #ccc
+  }
+  .box-row-time.comments{
+    color: red
+  }
+  
+}
+  

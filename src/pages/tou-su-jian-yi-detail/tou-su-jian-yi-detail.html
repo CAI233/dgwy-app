@@ -1,0 +1,49 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            投诉建议
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="box" style="padding-top: 1rem;">
+        <div class="box-content">
+            <div class="box-row">
+                <div class="box-row-icon">
+                    <img src="{{service.ctxPath+detail.icon}}"  onerror="this.src='assets/imgs/img404.png'">
+                </div>
+                <div class="box-row-content">
+                    <div class="box-row-text">
+                        <span style="font-weight: 500;font-size: 1.4rem;">{{detail.member_name}}</span>
+                        <span style="float:right;">{{detail.create_time}}
+                            <b style="margin-left: .5rem" [ngStyle]="{'color':detail.reply_status==1?'#619cde':'#f97e1c'}" [innerHtml]="detail.reply_status==1?'已回复':'未回复'"></b>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="box-row-after" [ngStyle]="{'border':detail.reply_status==1?'':'none'}">
+                <p>{{detail.content}}</p>
+                <div class="img-list" *ngIf="detail.img_path">
+                    <img src="{{service.ctxPath+img}}" *ngFor="let img of detail.img_path.split(',')" (click)="imgBig(this)">
+                </div>
+                <div *ngIf="!detail.img_path" style="height: 2rem;width: 100%;">
+
+                </div>
+            </div>
+            <div class="box-row-after" style="border:none" *ngIf="detail.reply_status==1">
+                <b style="padding: 0 6vw;">回复：</b>
+                <p>
+                    {{detail.reply_content}}
+                </p>
+
+            </div>
+        </div>
+    </div>
+</ion-content>
+<div id="imgBig" style="display: none">
+        <ion-slides pager *ngIf="imgBigs && imgBigs.length>0">
+            <ion-slide *ngFor="let img of imgBigs">
+                <img src="{{service.ctxPath+img}}" onload="imgLoad(this)">
+            </ion-slide>
+        </ion-slides>
+    </div>

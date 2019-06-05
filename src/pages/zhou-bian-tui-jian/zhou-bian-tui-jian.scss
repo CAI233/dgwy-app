@@ -1,0 +1,30 @@
+page-zbtj {
+  .box-row-content{
+    width: 100vw;
+    padding-left: 0;
+  }
+  .box-row-text{
+    font-weight: 500;
+  }
+  .box-row-time.end{
+    color: #ccc
+  }
+  .box-row-time.comments{
+    color: red
+  }
+  .box-row-text p{
+      margin: .5rem 0;
+      font-size: 1.6rem;
+  }
+  .box-row:not(:last-child)::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+    height: 0.5rem;
+    background: #ececec;
+  }
+
+}
+  

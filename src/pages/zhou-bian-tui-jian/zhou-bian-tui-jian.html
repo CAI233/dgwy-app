@@ -1,0 +1,39 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            周边推荐
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="正在刷新">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div class="box" style="padding-top: 1rem;">
+        <div class="box-content" *ngIf="data && data.length>0">
+            <div class="box-row" (tap)="toZhouBianTuiJIanDetail(d.id)" *ngFor="let d of data">
+                <div class="box-row-content">
+                    <div class="box-row-text">
+                        <p>
+                            {{d.title}}
+                        </p>
+                        <p>
+                            <img width="100%" src="{{service.ctxPath+d.cover_small}}">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-content" *ngIf="!data || data.length==0">
+            <img src="assets/imgs/not-content.png" style="width: 50vw;margin: 20vh 25vw">
+        </div>
+    </div>
+    <!--下滑的时候，加载数据-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载数据..." *ngIf="scrollShow">
+        </ion-infinite-scroll-content>
+        <ion-infinite-scroll-content loadingSpinner="false" loadingText="已经到底了" *ngIf="!scrollShow">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

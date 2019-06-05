@@ -1,0 +1,60 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            东光风采
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="正在刷新">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-slides #Slides loop="true" autoplay="3000" *ngIf="adv.length>=1" pager class="adv">
+        <ion-slide *ngFor="let d of adv">
+            <img src="{{service.ctxPath+d.adv_img_small}}" onload="imgLoad(this)">
+        </ion-slide>
+    </ion-slides>
+    <div class="tab-title">
+        <span [ngClass]="{'active':tabNum==1}" (click)="tabNum=1">公司动态</span>
+        <span [ngClass]="{'active':tabNum==2}" (click)="tabNum=2">公司简介</span>
+    </div>
+    <div class="tab-content">
+        <div class="box" *ngIf="tabNum==1">
+            <div class="box-content" *ngIf="data && data.length>0">
+                <div class="box-row" *ngFor="let d of data" (tap)="toDongGuangFengCaiDetail(d.id)">
+                    <div class="box-row-icon">
+                        <img src="{{service.ctxPath+d.cover_small}}">
+                    </div>
+                    <div class="box-row-content">
+                        <div class="box-row-title">
+                            {{d.title}}
+                        </div>
+                        <div class="box-row-time">{{d.create_time}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-content" *ngIf="!data || data.length==0">
+                <img src="assets/imgs/not-content.png" style="width: 50vw;margin: 20vh 25vw">
+            </div>
+        </div>
+        <div class="box" *ngIf="tabNum==2">
+            <div class="box-content" style="padding: 0 6vw;">
+                <p style="text-align: justify;text-indent: 2em">湖北长江东光物业管理有限责任公司成立于2006年，是湖北省最大的文化企业湖北长江出版传媒集团公司旗下全资子公司。公司致力于高端写字楼、科研院所、商厦等各种物业管理顾问服务和委托资产租赁经营服务，为客户提供专业化的物业工程、保安、保洁、租赁经营服务，具有国家二级物业管理企业资质，2012年6月通过ISO9001国际质量管理体系认证。</p>
+                <p style="text-align: justify;text-indent: 2em">公司拥有一支具有丰富物业管理经验和专业敬岗的高素质的管理队伍，管理团队具有年轻化、知识化、专业化、复合型的特点。由公司管理的湖北出版文化城被建设部评为“物业管理省优大厦”、“物业管理国优示范大厦”，多次接待国家领导人和国际友人的参观访问。</p>
+                <p style="text-align: justify;text-indent: 2em">面向未来，公司将始终以“用心创造更大物业价值，全力构建优美人居环境”为己任，坚持“以市场为导向，品牌为基础、科技为杠杆、效益为中心”的发展战略，秉承“高效、专业、诚信、务实”的一贯作风，与时俱进，在向客户提供的每一项服务里，融入长江东光的标准化、一体化、品牌化全面物业服务管理模式，实现公司与客户双赢的管理效果。
+                </p>
+
+                <img src="assets/imgs/brief_img1.jpg" alt="" width="100%">
+                <img src="assets/imgs/brief_img2.jpg" alt="" width="100%" style="margin-top: .5rem">
+            </div>
+        </div>
+    </div>
+    <!--下滑的时候，加载数据-->
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载数据..." *ngIf="scrollShow">
+        </ion-infinite-scroll-content>
+        <ion-infinite-scroll-content loadingSpinner="false" loadingText="已经到底了" *ngIf="!scrollShow">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,46 @@
+page-dgfcd {
+
+  .detail{
+    padding: 0 5vw 5vw 5vw;
+  }
+  .detail p{
+    font-weight: 500;
+    color: #545454;
+    font-size: 1.3rem;
+    margin: 0;
+    display: inline-block;
+  }
+  .detail-title{}
+  .detail-row{    
+    display: flex;
+    width: 90vw;
+    height: 2rem;
+    line-height: 2rem;
+  }
+  .detail-time{
+    width: 47vw;
+  }
+  .detail-type{    
+    width: 47vw;
+    text-align: right;
+    font-weight: 500;
+  }
+  .detail-type.c1{
+    color: #619cde;
+  }
+  .detail-type.c2{
+      color: #f97e1c;
+  }
+  .detail-type.c3{
+      color: #28b929;
+  }
+  .detail-content{
+    margin-top: 1rem;
+  }
+  .detail-text{
+    text-align: justify;
+    margin-bottom: 1rem;
+  }
+  .detail-img{}
+}
+  

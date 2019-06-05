@@ -1,0 +1,65 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-inapppurchase": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-themeablebrowser": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "jpush-phonegap-plugin": {
+      "APP_KEY": "ccd3df9bdd09b84b8c4c7785",
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    }
+  },
+  "dependent_plugins": {
+    "com.synconset.imagepicker": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    },
+    "cordova-plugin-jcore": {
+      "PACKAGE_NAME": "com.dgwy.myapp"
+    }
+  }
+}

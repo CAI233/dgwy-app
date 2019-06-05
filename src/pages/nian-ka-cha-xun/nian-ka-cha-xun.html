@@ -1,0 +1,28 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            年卡查询
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="box" style="padding-top: 1rem;border-bottom: 1px solid #ececec;" *ngIf="data && data.length>0">
+        <div class="box-content">
+            <div class="box-row" *ngFor="let d of data">
+                <div class="box-row-content">
+                    <div class="box-row-text">
+                        <p>车&emsp;&emsp;主：{{d.contacts}}</p>
+                        <p>手&nbsp;&nbsp;机&nbsp;&nbsp;号：{{d.phone}}</p>
+                        <p>车&nbsp;&nbsp;牌&nbsp;&nbsp;号：{{d.car_number}}</p>
+                        <p>到期日期：{{d.end_time}}
+                            <span style="margin-left: 1rem" [ngStyle]="{'color':d.end_status?'#f12828':'#2bbb2b'}" [innerHtml]="d.end_status?'即将到期':'正常'"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box" *ngIf="!data || data.length==0">
+            <img src="assets/imgs/not-content.png" style="width: 50vw;margin: 20vh 25vw">
+        </div>
+</ion-content>

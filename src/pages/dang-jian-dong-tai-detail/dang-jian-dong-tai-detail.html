@@ -1,0 +1,18 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            党建动态
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="detail" *ngIf="detail.title">
+        <h4 class="detail-title" style="font-size: 1.8rem;">{{detail.title}}</h4>
+        <div class="detail-row">
+            <div class="detail-time" style="color: #6b6b6b;">发布时间：{{detail.create_time}}</div>
+        </div>
+        <div class="detail-content">
+            <div class="detail-text" [innerHtml]="detail.content"></div>
+        </div>
+    </div>
+</ion-content>
